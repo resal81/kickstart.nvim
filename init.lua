@@ -29,6 +29,8 @@ require('lazy').setup({
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
+  'tpope/vim-surround',
+
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
   {
@@ -60,7 +62,7 @@ require('lazy').setup({
       'hrsh7th/cmp-nvim-lsp',
 
       -- Adds a number of user-friendly snippets
-      'rafamadriz/friendly-snippets',
+      -- 'rafamadriz/friendly-snippets',
     },
   },
 
@@ -123,7 +125,17 @@ require('lazy').setup({
     },
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'gruvbox'
+    end,
+  },
+
+  {
+    "catppuccin/nvim",
+    priority = 1000,
+    opts = {
+      no_italic = true,
+    },
+    config = function()
+      vim.cmd.colorscheme 'catppuccin-mocha'
     end,
   },
 
@@ -207,6 +219,7 @@ require('lazy').setup({
 vim.o.hlsearch = false
 vim.wo.number = true
 vim.o.mouse = ''
+vim.o.autochdir = true
 
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
@@ -284,7 +297,7 @@ vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
-vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]resume' })
+vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
