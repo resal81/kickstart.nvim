@@ -218,8 +218,12 @@ require('lazy').setup({
 
 vim.o.hlsearch = false
 vim.wo.number = true
-vim.o.mouse = ''
-vim.o.autochdir = true
+vim.o.mouse = 'a'
+vim.o.autochdir = false
+vim.o.scrolloff = 20
+vim.o.sw = 4
+vim.o.expandtab = true
+vim.o.tabstop = 4
 
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
